@@ -12,19 +12,19 @@ public class DiceGameSimulation {
 
     /**
      * Runs a single iteration of the dice board game
-     * @param initalDiceCount - The initial number of dices in the game
+     * @param initialDiceCount - The initial number of dices in the game
      * @return The final score of the game
      */
-    public static int playBoardGame(int initalDiceCount){
+    public static int playBoardGame(int initialDiceCount){
         int finalScore = 0;
         Random random = new Random();
-        while (initalDiceCount > 0) {
+        while (initialDiceCount > 0) {
 
             List<Integer> rolls = new ArrayList<>();
             int threeCounter = 0;
 
             // Roll all the dices on the board
-            for (int i = 0; i < initalDiceCount; i++) {
+            for (int i = 0; i < initialDiceCount; i++) {
                 int currentRoll = random.nextInt(6)+1;
                 rolls.add(currentRoll);
 
@@ -36,13 +36,13 @@ public class DiceGameSimulation {
 
             if (threeCounter > 0) {
                 // If there are any 3’s, all the 3’s are taken off the board and a score of 0 is awarded
-                initalDiceCount -= threeCounter;
+                initialDiceCount -= threeCounter;
             } else {
                 // If there are not any 3’s, the lowest die is taken off the board and the value
                 // of that lowest die is awarded for this roll.
                 int lowestValue = Collections.min(rolls);
                 finalScore += lowestValue;
-                initalDiceCount -= 1;
+                initialDiceCount -= 1;
             }
 
         }
