@@ -10,6 +10,10 @@ public class DiceGameSimulation {
     static final int SIMULATIONS_TO_RUN = 1000;
     static final int NUM_OF_DICE = 5;
 
+    public static void main(String[] args) {
+        runSimulation(SIMULATIONS_TO_RUN, NUM_OF_DICE);
+    }
+
     /**
      * Runs a single iteration of the dice board game
      * @param initialDiceCount - The initial number of dices in the game
@@ -83,9 +87,5 @@ public class DiceGameSimulation {
         }
 
         System.out.printf("Total simulation took %.3f seconds.%n", timeElapsed);
-    }
-
-    public static void main(String[] args) {
-        runSimulation(SIMULATIONS_TO_RUN, NUM_OF_DICE);
     }
 }
